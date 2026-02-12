@@ -223,8 +223,23 @@ document.addEventListener('click', function (e) {
     }
 });
 
+HC.Nav = {
+    update() {
+        const path = window.location.pathname;
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const href = link.getAttribute('href');
+            const active = path === href || (href !== '/' && path.startsWith(href));
+            link.classList.toggle('active', active);
+        });
+    }
+};
 
 document.addEventListener('DOMContentLoaded', function () {
     HC.Theme.init();
     HC.Toast.init();
+    HC.Nav.update();
+});
+
+document.addEventListener('htmx:pushedIntoHistory', function () {
+    HC.Nav.update();
 });
