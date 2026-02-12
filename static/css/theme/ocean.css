@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Ocean
+   Deep sea blues and teals — calm and professional
+   ================================================================ */
+[data-theme="ocean"] {
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-light: #bae6fd;
+  --accent-bg: #e0f2fe;
+
+  --bg-primary: #ecfeff;
+  --bg-secondary: #f0f9ff;
+  --bg-tertiary: #cffafe;
+  --surface: #f0f9ff;
+  --surface-hover: #e0f2fe;
+  --surface-elevated: #f8fafc;
+
+  --text-primary: #0c4a6e;
+  --text-secondary: #155e75;
+  --text-tertiary: #0e7490;
+  --text-inverse: #ffffff;
+
+  --border: #0c4a6e;
+
+  --yellow: #fbbf24;
+  --yellow-bg: #fef9c3;
+  --pink: #ec4899;
+  --pink-bg: #fce7f3;
+  --green: #14b8a6;
+  --green-bg: #ccfbf1;
+  --blue: #06b6d4;
+  --blue-bg: #cffafe;
+  --orange: #f97316;
+  --orange-bg: #ffedd5;
+  --red: #ef4444;
+  --red-bg: #fee2e2;
+  --purple: #6366f1;
+  --purple-bg: #e0e7ff;
+
+  --success: #14b8a6;
+  --success-bg: #ccfbf1;
+  --warning: #f59e0b;
+  --warning-bg: #fef3c7;
+  --danger: #ef4444;
+  --danger-bg: #fee2e2;
+  --info: #0ea5e9;
+  --info-bg: #e0f2fe;
+
+  --shadow-sm: 3px 3px 0px #0c4a6e;
+  --shadow-md: 5px 5px 0px #0c4a6e;
+  --shadow-lg: 7px 7px 0px #0c4a6e;
+  --shadow-xl: 10px 10px 0px #0c4a6e;
+  --shadow-hover: 8px 8px 0px #0c4a6e;
+  --shadow-active: 2px 2px 0px #0c4a6e;
+}

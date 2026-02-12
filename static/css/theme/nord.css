@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Nord
+   Arctic-inspired color palette — cool and elegant
+   ================================================================ */
+[data-theme="nord"] {
+  --accent: #88c0d0;
+  --accent-hover: #81a1c1;
+  --accent-light: #3b4252;
+  --accent-bg: #2e3440;
+
+  --bg-primary: #2e3440;
+  --bg-secondary: #3b4252;
+  --bg-tertiary: #434c5e;
+  --surface: #3b4252;
+  --surface-hover: #434c5e;
+  --surface-elevated: #4c566a;
+
+  --text-primary: #eceff4;
+  --text-secondary: #d8dee9;
+  --text-tertiary: #81a1c1;
+  --text-inverse: #2e3440;
+
+  --border: #d8dee9;
+
+  --yellow: #ebcb8b;
+  --yellow-bg: #3d3525;
+  --pink: #b48ead;
+  --pink-bg: #382e38;
+  --green: #a3be8c;
+  --green-bg: #2e3825;
+  --blue: #88c0d0;
+  --blue-bg: #253038;
+  --orange: #d08770;
+  --orange-bg: #382b25;
+  --red: #bf616a;
+  --red-bg: #381e22;
+  --purple: #b48ead;
+  --purple-bg: #382e38;
+
+  --success: #a3be8c;
+  --success-bg: #2e3825;
+  --warning: #ebcb8b;
+  --warning-bg: #3d3525;
+  --danger: #bf616a;
+  --danger-bg: #381e22;
+  --info: #88c0d0;
+  --info-bg: #253038;
+
+  --shadow-sm: 3px 3px 0px #d8dee9;
+  --shadow-md: 5px 5px 0px #d8dee9;
+  --shadow-lg: 7px 7px 0px #88c0d0;
+  --shadow-xl: 10px 10px 0px #88c0d0;
+  --shadow-hover: 8px 8px 0px #d8dee9;
+  --shadow-active: 2px 2px 0px #d8dee9;
+}

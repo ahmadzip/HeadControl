@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Pastel
+   Soft, dreamy pastels — gentle and friendly
+   ================================================================ */
+[data-theme="pastel"] {
+  --accent: #a78bfa;
+  --accent-hover: #8b5cf6;
+  --accent-light: #ddd6fe;
+  --accent-bg: #f5f3ff;
+
+  --bg-primary: #fdf2f8;
+  --bg-secondary: #fefce8;
+  --bg-tertiary: #fce7f3;
+  --surface: #fffbeb;
+  --surface-hover: #fef3c7;
+  --surface-elevated: #fefce8;
+
+  --text-primary: #4a2c6e;
+  --text-secondary: #6e4a8a;
+  --text-tertiary: #9a7bb5;
+  --text-inverse: #ffffff;
+
+  --border: #6d28d9;
+
+  --yellow: #fbbf24;
+  --yellow-bg: #fef9c3;
+  --pink: #f9a8d4;
+  --pink-bg: #fce7f3;
+  --green: #6ee7b7;
+  --green-bg: #d1fae5;
+  --blue: #93c5fd;
+  --blue-bg: #dbeafe;
+  --orange: #fdba74;
+  --orange-bg: #ffedd5;
+  --red: #fca5a5;
+  --red-bg: #fee2e2;
+  --purple: #c4b5fd;
+  --purple-bg: #ede9fe;
+
+  --success: #34d399;
+  --success-bg: #d1fae5;
+  --warning: #fbbf24;
+  --warning-bg: #fef3c7;
+  --danger: #fb7185;
+  --danger-bg: #ffe4e6;
+  --info: #93c5fd;
+  --info-bg: #dbeafe;
+
+  --shadow-sm: 3px 3px 0px #6d28d9;
+  --shadow-md: 5px 5px 0px #6d28d9;
+  --shadow-lg: 7px 7px 0px #a78bfa;
+  --shadow-xl: 10px 10px 0px #a78bfa;
+  --shadow-hover: 8px 8px 0px #6d28d9;
+  --shadow-active: 2px 2px 0px #6d28d9;
+}

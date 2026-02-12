@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Synthwave
+   Neon grid, retro futuristic, cyber purple
+   ================================================================ */
+[data-theme="synthwave"] {
+  --accent: #d52d9a; /* neon pink/purple */
+  --accent-hover: #f0f;
+  --accent-light: #591642;
+  --accent-bg: #241b2f;
+
+  --bg-primary: #2b213a; /* deep purple bg */
+  --bg-secondary: #241b2f; /* slightly darker */
+  --bg-tertiary: #1a1625;
+  --surface: #241b2f;
+  --surface-hover: #342a45;
+  --surface-elevated: #463a5c;
+
+  --text-primary: #f0f0f0;
+  --text-secondary: #b6b6b6;
+  --text-tertiary: #ff71ce; /* neon pink text for muted */
+  --text-inverse: #2b213a;
+
+  --border: #d52d9a; /* neon border */
+
+  --yellow: #f9e154;
+  --yellow-bg: #3d3a1a;
+  --pink: #ff71ce;
+  --pink-bg: #3d1a30;
+  --green: #05ffa1;
+  --green-bg: #1a3d2e;
+  --blue: #01cdfe;
+  --blue-bg: #1a303d;
+  --orange: #ff9f43;
+  --orange-bg: #3d2a1a;
+  --red: #ff5555;
+  --red-bg: #3d1a1a;
+  --purple: #b967ff;
+  --purple-bg: #2e1a3d;
+
+  --success: #05ffa1;
+  --success-bg: #1a3d2e;
+  --warning: #f9e154;
+  --warning-bg: #3d3a1a;
+  --danger: #ff5555;
+  --danger-bg: #3d1a1a;
+  --info: #01cdfe;
+  --info-bg: #1a303d;
+
+  --shadow-sm: 3px 3px 0px #b967ff;
+  --shadow-md: 5px 5px 0px #b967ff;
+  --shadow-lg: 7px 7px 0px #01cdfe;
+  --shadow-xl: 10px 10px 0px #01cdfe;
+  --shadow-hover: 8px 8px 0px #ff71ce;
+  --shadow-active: 2px 2px 0px #d52d9a;
+}

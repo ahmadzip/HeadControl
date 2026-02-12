@@ -1,0 +1,84 @@
+{{define "node-detail.html"}}
+{{if .Error}}
+<div class="error-banner">
+    <span>{{.Error}}</span>
+</div>
+{{else if .Node}}
+<div class="node-detail-grid">
+    <div class="detail-row">
+        <span class="detail-label">ID</span>
+        <span class="detail-value"><code class="text-mono">{{.Node.ID}}</code></span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Given Name</span>
+        <span class="detail-value"><strong>{{.Node.GivenName}}</strong></span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Hostname</span>
+        <span class="detail-value">{{.Node.Name}}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">User</span>
+        <span class="detail-value">{{if .Node.User}}{{.Node.User.Name}}{{else}}—{{end}}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Status</span>
+        <span class="detail-value">
+            {{if .Node.Online}}
+            <span class="badge badge-success"><span class="badge-dot"></span> Online</span>
+            {{else}}
+            <span class="badge badge-neutral"><span class="badge-dot"></span> Offline</span>
+            {{end}}
+        </span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">IP Addresses</span>
+        <span class="detail-value">
+            {{if .Node.IPAddresses}}
+            {{range .Node.IPAddresses}}<code class="text-mono">{{.}}</code> {{end}}
+            {{else}}—{{end}}
+        </span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Last Seen</span>
+        <span class="detail-value">{{fmtTime .Node.LastSeen}}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Expiry</span>
+        <span class="detail-value">{{fmtTime .Node.Expiry}}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Created</span>
+        <span class="detail-value">{{fmtTime .Node.CreatedAt}}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Register Method</span>
+        <span class="detail-value">{{if .Node.RegisterMethod}}{{.Node.RegisterMethod}}{{else}}—{{end}}</span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Tags</span>
+        <span class="detail-value">
+            {{if .Node.Tags}}
+            {{range .Node.Tags}}<span class="tag">{{.}}</span>{{end}}
+            {{else}}—{{end}}
+        </span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Approved Routes</span>
+        <span class="detail-value">
+            {{if .Node.ApprovedRoutes}}
+            {{range .Node.ApprovedRoutes}}<code class="text-mono">{{.}}</code> {{end}}
+            {{else}}—{{end}}
+        </span>
+    </div>
+    <div class="detail-row">
+        <span class="detail-label">Available Routes</span>
+        <span class="detail-value">
+            {{if .Node.AvailableRoutes}}
+            {{range .Node.AvailableRoutes}}<code class="text-mono">{{.}}</code> {{end}}
+            {{else}}—{{end}}
+        </span>
+    </div>
+</div>
+{{end}}
+{{end}}

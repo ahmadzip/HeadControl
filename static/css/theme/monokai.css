@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Monokai
+   Classic code editor dark theme — warm dark tones
+   ================================================================ */
+[data-theme="monokai"] {
+  --accent: #a6e22e;
+  --accent-hover: #8cc218;
+  --accent-light: #3e4a1a;
+  --accent-bg: #1e2010;
+
+  --bg-primary: #272822;
+  --bg-secondary: #1e1f1a;
+  --bg-tertiary: #3e3d32;
+  --surface: #1e1f1a;
+  --surface-hover: #3e3d32;
+  --surface-elevated: #49483e;
+
+  --text-primary: #f8f8f2;
+  --text-secondary: #cfcfc2;
+  --text-tertiary: #75715e;
+  --text-inverse: #272822;
+
+  --border: #a6e22e;
+
+  --yellow: #e6db74;
+  --yellow-bg: #2e2c1a;
+  --pink: #f92672;
+  --pink-bg: #3d0a1e;
+  --green: #a6e22e;
+  --green-bg: #1e2e0a;
+  --blue: #66d9ef;
+  --blue-bg: #0a2e3d;
+  --orange: #fd971f;
+  --orange-bg: #3d1e0a;
+  --red: #f92672;
+  --red-bg: #3d0a1e;
+  --purple: #ae81ff;
+  --purple-bg: #1e0a3d;
+
+  --success: #a6e22e;
+  --success-bg: #1e2e0a;
+  --warning: #e6db74;
+  --warning-bg: #2e2c1a;
+  --danger: #f92672;
+  --danger-bg: #3d0a1e;
+  --info: #66d9ef;
+  --info-bg: #0a2e3d;
+
+  --shadow-sm: 3px 3px 0px #a6e22e;
+  --shadow-md: 5px 5px 0px #a6e22e;
+  --shadow-lg: 7px 7px 0px #f92672;
+  --shadow-xl: 10px 10px 0px #f92672;
+  --shadow-hover: 8px 8px 0px #a6e22e;
+  --shadow-active: 2px 2px 0px #a6e22e;
+}

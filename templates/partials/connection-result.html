@@ -1,0 +1,13 @@
+{{define "connection-result.html"}}
+{{if .Success}}
+<div class="connection-result success">
+    <i data-lucide="check-circle"></i>
+    <span>{{.Message}}</span>
+</div>
+{{else}}
+<div class="connection-result error">
+    <i data-lucide="x-circle"></i>
+    <span>{{.Message}}</span>
+</div>
+{{end}}
+{{end}}

@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Rose
+   Elegant rose/pink tones — feminine and refined
+   ================================================================ */
+[data-theme="rose"] {
+  --accent: #e11d48;
+  --accent-hover: #be123c;
+  --accent-light: #fecdd3;
+  --accent-bg: #fff1f2;
+
+  --bg-primary: #fff1f2;
+  --bg-secondary: #ffe4e6;
+  --bg-tertiary: #fecdd3;
+  --surface: #ffffff;
+  --surface-hover: #fff1f2;
+  --surface-elevated: #ffffff;
+
+  --text-primary: #4c0519;
+  --text-secondary: #881337;
+  --text-tertiary: #9f1239;
+  --text-inverse: #ffffff;
+
+  --border: #4c0519;
+
+  --yellow: #fbbf24;
+  --yellow-bg: #fef9c3;
+  --pink: #f43f5e;
+  --pink-bg: #ffe4e6;
+  --green: #10b981;
+  --green-bg: #d1fae5;
+  --blue: #6366f1;
+  --blue-bg: #e0e7ff;
+  --orange: #f97316;
+  --orange-bg: #ffedd5;
+  --red: #e11d48;
+  --red-bg: #ffe4e6;
+  --purple: #a855f7;
+  --purple-bg: #f3e8ff;
+
+  --success: #10b981;
+  --success-bg: #d1fae5;
+  --warning: #f59e0b;
+  --warning-bg: #fef3c7;
+  --danger: #e11d48;
+  --danger-bg: #ffe4e6;
+  --info: #6366f1;
+  --info-bg: #e0e7ff;
+
+  --shadow-sm: 3px 3px 0px #4c0519;
+  --shadow-md: 5px 5px 0px #4c0519;
+  --shadow-lg: 7px 7px 0px #e11d48;
+  --shadow-xl: 10px 10px 0px #e11d48;
+  --shadow-hover: 8px 8px 0px #4c0519;
+  --shadow-active: 2px 2px 0px #4c0519;
+}

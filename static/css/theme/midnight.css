@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Midnight
+   True dark AMOLED black with vivid accent pops
+   ================================================================ */
+[data-theme="midnight"] {
+  --accent: #f472b6;
+  --accent-hover: #ec4899;
+  --accent-light: #831843;
+  --accent-bg: #1a0a1a;
+
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #141414;
+  --surface: #0a0a0a;
+  --surface-hover: #1a1a1a;
+  --surface-elevated: #1e1e1e;
+
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d4;
+  --text-tertiary: #a3a3a3;
+  --text-inverse: #000000;
+
+  --border: #525252;
+
+  --yellow: #facc15;
+  --yellow-bg: #1a1700;
+  --pink: #f472b6;
+  --pink-bg: #2d0a1e;
+  --green: #4ade80;
+  --green-bg: #0a2d14;
+  --blue: #38bdf8;
+  --blue-bg: #0a1a2d;
+  --orange: #fb923c;
+  --orange-bg: #2d1400;
+  --red: #f87171;
+  --red-bg: #2d0a0a;
+  --purple: #c084fc;
+  --purple-bg: #1a0a2d;
+
+  --success: #4ade80;
+  --success-bg: #0a2d14;
+  --warning: #facc15;
+  --warning-bg: #1a1700;
+  --danger: #f87171;
+  --danger-bg: #2d0a0a;
+  --info: #38bdf8;
+  --info-bg: #0a1a2d;
+
+  --shadow-sm: 3px 3px 0px #525252;
+  --shadow-md: 5px 5px 0px #525252;
+  --shadow-lg: 7px 7px 0px #525252;
+  --shadow-xl: 10px 10px 0px #525252;
+  --shadow-hover: 8px 8px 0px #f472b6;
+  --shadow-active: 2px 2px 0px #525252;
+}

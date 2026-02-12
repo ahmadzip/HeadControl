@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Coffee
+   Warm, earthy, latte colors
+   ================================================================ */
+[data-theme="coffee"] {
+  --accent: #a0522d; /* sienna */
+  --accent-hover: #8b4513;
+  --accent-light: #d2b48c;
+  --accent-bg: #fff5ee; /* seashells */
+
+  --bg-primary: #f5deb3; /* wheat */
+  --bg-secondary: #fcebd5;
+  --bg-tertiary: #dfd3c3;
+  --surface: #fff8e7; /* cosmic latte */
+  --surface-hover: #fcf1e0;
+  --surface-elevated: #d2b48c;
+
+  --text-primary: #4b3621; /* dark brown */
+  --text-secondary: #5d4037;
+  --text-tertiary: #8d6e63;
+  --text-inverse: #fff8e7;
+
+  --border: #8b4513; /* saddle brown */
+
+  --yellow: #d4a373;
+  --yellow-bg: #fae1dd;
+  --pink: #ffafcc;
+  --pink-bg: #fae1dd;
+  --green: #7f5539; /* earthy green replaced with brown/green mix */
+  --green-bg: #e6ccb2;
+  --blue: #a2d2ff; /* muted blue */
+  --blue-bg: #e6ccb2;
+  --orange: #e07a5f;
+  --orange-bg: #f2cc8f;
+  --red: #d90429;
+  --red-bg: #ef233c;
+  --purple: #9c6644;
+  --purple-bg: #ddb892;
+
+  --success: #388e3c;
+  --success-bg: #c8e6c9;
+  --warning: #fbc02d;
+  --warning-bg: #fff9c4;
+  --danger: #d32f2f;
+  --danger-bg: #ffcdd2;
+  --info: #1976d2;
+  --info-bg: #bbdefb;
+
+  --shadow-sm: 3px 3px 0px #8b4513;
+  --shadow-md: 5px 5px 0px #8b4513;
+  --shadow-lg: 7px 7px 0px #a0522d;
+  --shadow-xl: 10px 10px 0px #a0522d;
+  --shadow-hover: 8px 8px 0px #d2b48c;
+  --shadow-active: 2px 2px 0px #5d4037;
+}

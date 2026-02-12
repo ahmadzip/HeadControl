@@ -1,0 +1,164 @@
+{{define "users-content.html"}}
+<div class="page-header">
+    <div class="page-header-info">
+        <h2>Users</h2>
+        <p>Manage Headscale users</p>
+    </div>
+    <button class="btn btn-primary" onclick="HC.Modal.open('create-user-modal')">
+        <i data-lucide="plus"></i>
+        Add User
+    </button>
+</div>
+
+{{if .Error}}
+<div class="error-banner">
+    <i data-lucide="x-circle"></i>
+    <span>{{.Error}}</span>
+    <button class="btn btn-secondary btn-sm" hx-get="/users/table" hx-target=".content" hx-swap="innerHTML">Retry</button>
+</div>
+{{else}}
+
+<div id="users-table-wrap">
+    {{if .Users}}
+    <div class="table-card">
+        <div class="table-card-header">
+            <h3 class="table-card-title">{{len .Users}} Users</h3>
+            <button class="btn btn-ghost btn-sm" hx-get="/users/table" hx-target=".content" hx-swap="innerHTML">
+                <i data-lucide="refresh-cw" style="width:14px;height:14px;"></i>
+                Refresh
+            </button>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Display Name</th>
+                        <th>Email</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .Users}}
+                    <tr id="user-row-{{.ID}}">
+                        <td data-cell="Username"><strong>{{.Name}}</strong></td>
+                        <td data-cell="Display Name">{{if .DisplayName}}{{.DisplayName}}{{else}}<span class="text-muted">—</span>{{end}}</td>
+                        <td data-cell="Email">{{if .Email}}{{.Email}}{{else}}<span class="text-muted">—</span>{{end}}</td>
+                        <td data-cell="Created" class="text-muted">{{fmtTime .CreatedAt}}</td>
+                        <td data-cell="Actions">
+                            <div class="btn-group">
+                                <button class="btn btn-ghost btn-sm btn-icon" title="Rename" onclick="HC.Modal.openRenameUser('{{.ID}}', '{{.Name}}')">
+                                    <i data-lucide="pencil"></i>
+                                </button>
+                                <button class="btn btn-ghost btn-sm btn-icon text-danger" title="Delete" onclick="HC.Modal.openDeleteUser('{{.ID}}', '{{.Name}}')">
+                                    <i data-lucide="trash-2"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{else}}
+    <div class="table-card">
+        <div class="empty-state">
+            <i data-lucide="users" style="width:48px;height:48px;stroke-width:1.5;"></i>
+            <h3>No Users</h3>
+            <p>Create your first user to get started.</p>
+        </div>
+    </div>
+    {{end}}
+</div>
+
+<div class="modal-overlay" id="create-user-modal" style="display:none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Create User</h3>
+            <button class="modal-close" onclick="HC.Modal.close('create-user-modal')">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <form hx-post="/api/users/create" hx-target="#toast-container" hx-swap="beforeend" hx-on::after-request="if(event.detail.successful){HC.Modal.close('create-user-modal');HC.refreshUsers();}">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Username *</label>
+                    <input type="text" name="name" class="form-input" placeholder="e.g. alice" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Display Name</label>
+                    <input type="text" name="displayName" class="form-input" placeholder="e.g. Alice Johnson">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-input" placeholder="e.g. alice@example.com">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="HC.Modal.close('create-user-modal')">Cancel</button>
+                <button type="submit" class="btn btn-primary">
+                    <span class="htmx-hide-on-request">Create User</span>
+                    <span class="htmx-indicator"><span class="spinner"></span></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay" id="rename-user-modal" style="display:none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Rename User</h3>
+            <button class="modal-close" onclick="HC.Modal.close('rename-user-modal')">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <form hx-post="/api/users/rename" hx-target="#toast-container" hx-swap="beforeend" hx-on::after-request="if(event.detail.successful){HC.Modal.close('rename-user-modal');HC.refreshUsers();}">
+            <div class="modal-body">
+                <input type="hidden" name="oldId" id="rename-user-id">
+                <p class="mb-4">Renaming user: <strong id="rename-user-current"></strong></p>
+                <div class="form-group">
+                    <label class="form-label">New Username *</label>
+                    <input type="text" name="newName" id="rename-user-newname" class="form-input" placeholder="New username" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="HC.Modal.close('rename-user-modal')">Cancel</button>
+                <button type="submit" class="btn btn-primary">
+                    <span class="htmx-hide-on-request">Rename</span>
+                    <span class="htmx-indicator"><span class="spinner"></span></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay" id="delete-user-modal" style="display:none;">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete User</h3>
+            <button class="modal-close" onclick="HC.Modal.close('delete-user-modal')">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <form hx-post="/api/users/delete" hx-target="#toast-container" hx-swap="beforeend" hx-on::after-request="if(event.detail.successful){HC.Modal.close('delete-user-modal');HC.refreshUsers();}">
+            <div class="modal-body">
+                <input type="hidden" name="id" id="delete-user-id">
+                <p>Are you sure you want to delete user <strong id="delete-user-name"></strong>?</p>
+                <p class="text-muted mt-2">This action cannot be undone. All nodes owned by this user may be affected.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="HC.Modal.close('delete-user-modal')">Cancel</button>
+                <button type="submit" class="btn btn-danger">
+                    <span class="htmx-hide-on-request">Delete User</span>
+                    <span class="htmx-indicator"><span class="spinner"></span></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{end}}
+{{end}}

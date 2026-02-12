@@ -1,0 +1,13 @@
+{{define "settings-result.html"}}
+{{if .Success}}
+<div class="settings-result success">
+    <i data-lucide="check-circle" style="width:18px;height:18px;"></i>
+    <span>{{.Message}}</span>
+</div>
+{{else}}
+<div class="settings-result error">
+    <i data-lucide="x-circle" style="width:18px;height:18px;"></i>
+    <span>{{.Message}}</span>
+</div>
+{{end}}
+{{end}}

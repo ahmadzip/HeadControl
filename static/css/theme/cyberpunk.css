@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Cyberpunk
+   Neon pink/cyan on dark — electric futuristic feel
+   ================================================================ */
+[data-theme="cyberpunk"] {
+  --accent: #06b6d4;
+  --accent-hover: #0891b2;
+  --accent-light: #164e63;
+  --accent-bg: #0c2d3f;
+
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #111127;
+  --bg-tertiary: #1a0a2e;
+  --surface: #111127;
+  --surface-hover: #1a1a35;
+  --surface-elevated: #1e1e40;
+
+  --text-primary: #e0f2fe;
+  --text-secondary: #7dd3fc;
+  --text-tertiary: #67e8f9;
+  --text-inverse: #0a0a1a;
+
+  --border: #22d3ee;
+
+  --yellow: #facc15;
+  --yellow-bg: #1a1500;
+  --pink: #f472b6;
+  --pink-bg: #2d0a1e;
+  --green: #22d3ee;
+  --green-bg: #0a2a2e;
+  --blue: #38bdf8;
+  --blue-bg: #0a1e3d;
+  --orange: #fb923c;
+  --orange-bg: #2d1400;
+  --red: #fb7185;
+  --red-bg: #2d0a0f;
+  --purple: #c084fc;
+  --purple-bg: #1e0a3d;
+
+  --success: #22d3ee;
+  --success-bg: #0a2a2e;
+  --warning: #facc15;
+  --warning-bg: #1a1500;
+  --danger: #fb7185;
+  --danger-bg: #2d0a0f;
+  --info: #38bdf8;
+  --info-bg: #0a1e3d;
+
+  --shadow-sm: 3px 3px 0px #22d3ee;
+  --shadow-md: 5px 5px 0px #22d3ee;
+  --shadow-lg: 7px 7px 0px #f472b6;
+  --shadow-xl: 10px 10px 0px #f472b6;
+  --shadow-hover: 8px 8px 0px #22d3ee;
+  --shadow-active: 2px 2px 0px #22d3ee;
+}

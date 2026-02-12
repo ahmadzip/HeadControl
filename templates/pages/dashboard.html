@@ -1,0 +1,106 @@
+{{define "dashboard-content.html"}}
+{{if .Error}}
+<div class="error-banner">
+    <i data-lucide="x-circle"></i>
+    <span>{{.Error}}</span>
+    <button class="btn btn-secondary btn-sm" hx-get="/dashboard/summary" hx-target=".content" hx-swap="innerHTML">Retry</button>
+</div>
+{{else}}
+<div class="stats-grid" id="stats-grid">
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <span class="stat-card-label">Total Users</span>
+            <div class="stat-card-icon users">
+                <i data-lucide="users"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{.Stats.UserCount}}</div>
+        <div class="stat-card-sub">registered users</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <span class="stat-card-label">Total Nodes</span>
+            <div class="stat-card-icon nodes">
+                <i data-lucide="cpu"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{.Stats.NodeCount}}</div>
+        <div class="stat-card-sub">connected devices</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <span class="stat-card-label">Online</span>
+            <div class="stat-card-icon online">
+                <i data-lucide="check-circle"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{.Stats.OnlineNodes}}</div>
+        <div class="stat-card-sub">nodes online now</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <span class="stat-card-label">Expiring Soon</span>
+            <div class="stat-card-icon" style="background: var(--orange); color: white;">
+                <i data-lucide="clock"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{.Stats.ExpiringSoon}}</div>
+        <div class="stat-card-sub">within 7 days</div>
+    </div>
+</div>
+
+<div class="table-card">
+    <div class="table-card-header">
+        <h3 class="table-card-title">Recent Nodes</h3>
+        <button class="btn btn-ghost btn-sm" hx-get="/dashboard/summary" hx-target=".content" hx-swap="innerHTML">
+            <i data-lucide="refresh-cw" style="width:14px;height:14px;"></i>
+            Refresh
+        </button>
+    </div>
+    {{if .RecentNodes}}
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>User</th>
+                    <th>IP</th>
+                    <th>Status</th>
+                    <th>Last Seen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .RecentNodes}}
+                <tr>
+                    <td data-cell="Name">
+                        <strong>{{.GivenName}}</strong>
+                        {{if and .Name (ne .Name .GivenName)}}<br><span class="text-muted" style="font-size:0.75rem;">{{.Name}}</span>{{end}}
+                    </td>
+                    <td data-cell="User">{{if .User}}{{.User.Name}}{{else}}—{{end}}</td>
+                    <td data-cell="IP">{{if .IPAddresses}}<code class="text-mono">{{index .IPAddresses 0}}</code>{{else}}—{{end}}</td>
+                    <td data-cell="Status">
+                        {{if .Online}}
+                        <span class="badge badge-success"><span class="badge-dot"></span> Online</span>
+                        {{else}}
+                        <span class="badge badge-neutral"><span class="badge-dot"></span> Offline</span>
+                        {{end}}
+                    </td>
+                    <td data-cell="Last Seen" class="text-muted">{{timeAgo .LastSeen}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+    <div class="empty-state">
+        <i data-lucide="cpu" style="width:48px;height:48px;stroke-width:1.5;"></i>
+        <h3>No Nodes Yet</h3>
+        <p>Connect your first device to see it here.</p>
+    </div>
+    {{end}}
+</div>
+{{end}}
+{{end}}

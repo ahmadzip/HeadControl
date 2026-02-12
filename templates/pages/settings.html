@@ -1,0 +1,87 @@
+{{define "settings-content.html"}}
+<div class="page-header">
+    <div class="page-header-info">
+        <h2>Settings</h2>
+        <p>Manage HeadControl configuration</p>
+    </div>
+</div>
+
+<div class="settings-section">
+    <h3 class="settings-section-title">Connection</h3>
+    <p class="settings-section-desc">Configure the Headscale server connection.</p>
+
+    <form hx-post="/api/update-settings" hx-target="#settings-feedback" hx-swap="innerHTML">
+        <div class="form-group">
+            <label class="form-label">Headscale Base URL</label>
+            <input type="url" name="base_url" class="form-input" value="{{if .Settings}}{{.Settings.BaseURL}}{{end}}" placeholder="https://headscale.example.com" required>
+        </div>
+        <div class="form-group">
+            <label class="form-label">API Key</label>
+            <input type="password" name="api_key" class="form-input" placeholder="Leave empty to keep current key">
+            <p class="text-muted mt-2" style="font-size:0.75rem;">For security, the API key is never displayed. Leave empty to keep the current key.</p>
+        </div>
+        <div class="btn-group mt-4">
+            <button type="submit" class="btn btn-primary">
+                <span class="htmx-hide-on-request">Save Settings</span>
+                <span class="htmx-indicator"><span class="spinner"></span></span>
+            </button>
+        </div>
+        <div id="settings-feedback"></div>
+    </form>
+</div>
+
+<div class="settings-section">
+    <h3 class="settings-section-title">Appearance</h3>
+    <p class="settings-section-desc">Choose your preferred theme.</p>
+    <div class="theme-grid">
+        <button class="theme-card" onclick="HC.Theme.set('light')">
+            <span class="theme-card-swatch" style="background:#f5f0eb; border-color:#1a1a2e;"></span>
+            <span class="theme-card-name">Light</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('dark')">
+            <span class="theme-card-swatch" style="background:#1a1a2e; border-color:#f1f5f9;"></span>
+            <span class="theme-card-name">Dark</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('cyberpunk')">
+            <span class="theme-card-swatch" style="background:#0a0a1a; border-color:#22d3ee;"></span>
+            <span class="theme-card-name">Cyberpunk</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('pastel')">
+            <span class="theme-card-swatch" style="background:#fdf2f8; border-color:#6d28d9;"></span>
+            <span class="theme-card-name">Pastel</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('ocean')">
+            <span class="theme-card-swatch" style="background:#ecfeff; border-color:#0c4a6e;"></span>
+            <span class="theme-card-name">Ocean</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('sunset')">
+            <span class="theme-card-swatch" style="background:#fffbeb; border-color:#431407;"></span>
+            <span class="theme-card-name">Sunset</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('forest')">
+            <span class="theme-card-swatch" style="background:#f0fdf4; border-color:#14532d;"></span>
+            <span class="theme-card-name">Forest</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('midnight')">
+            <span class="theme-card-swatch" style="background:#000000; border-color:#525252;"></span>
+            <span class="theme-card-name">Midnight</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('dracula')">
+            <span class="theme-card-swatch" style="background:#282a36; border-color:#6272a4;"></span>
+            <span class="theme-card-name">Dracula</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('nord')">
+            <span class="theme-card-swatch" style="background:#2e3440; border-color:#d8dee9;"></span>
+            <span class="theme-card-name">Nord</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('rose')">
+            <span class="theme-card-swatch" style="background:#fff1f2; border-color:#4c0519;"></span>
+            <span class="theme-card-name">Rose</span>
+        </button>
+        <button class="theme-card" onclick="HC.Theme.set('monokai')">
+            <span class="theme-card-swatch" style="background:#272822; border-color:#a6e22e;"></span>
+            <span class="theme-card-name">Monokai</span>
+        </button>
+    </div>
+</div>
+{{end}}

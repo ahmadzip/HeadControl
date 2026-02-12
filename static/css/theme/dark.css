@@ -1,0 +1,48 @@
+/* ================================================================
+   Theme: Dark
+   Deep navy Neo Brutalism with bright accents
+   ================================================================ */
+[data-theme="dark"] {
+  --accent: #818cf8;
+  --accent-hover: #6366f1;
+  --accent-light: #312e81;
+  --accent-bg: #1e1b4b;
+
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-tertiary: #0f3460;
+  --surface: #16213e;
+  --surface-hover: #1a2744;
+  --surface-elevated: #1e2d50;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #1a1a2e;
+
+  --border: #f1f5f9;
+
+  --yellow: #fbbf24;
+  --yellow-bg: #422006;
+  --pink: #f472b6;
+  --pink-bg: #500724;
+  --green: #34d399;
+  --green-bg: #064e3b;
+  --blue: #60a5fa;
+  --blue-bg: #1e3a5f;
+  --orange: #fb923c;
+  --orange-bg: #431407;
+  --red: #f87171;
+  --red-bg: #450a0a;
+  --purple: #a78bfa;
+  --purple-bg: #2e1065;
+
+  --success: #34d399;
+  --success-bg: #064e3b;
+  --warning: #fbbf24;
+  --warning-bg: #451a03;
+  --danger: #f87171;
+  --danger-bg: #450a0a;
+  --info: #60a5fa;
+  --info-bg: #1e3a5f;
+}

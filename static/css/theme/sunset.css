@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Sunset
+   Warm oranges, reds, and golds — energetic and bold
+   ================================================================ */
+[data-theme="sunset"] {
+  --accent: #ea580c;
+  --accent-hover: #c2410c;
+  --accent-light: #fed7aa;
+  --accent-bg: #fff7ed;
+
+  --bg-primary: #fffbeb;
+  --bg-secondary: #fef3c7;
+  --bg-tertiary: #ffedd5;
+  --surface: #fefce8;
+  --surface-hover: #fef3c7;
+  --surface-elevated: #fffbeb;
+
+  --text-primary: #431407;
+  --text-secondary: #7c2d12;
+  --text-tertiary: #9a3412;
+  --text-inverse: #ffffff;
+
+  --border: #431407;
+
+  --yellow: #f59e0b;
+  --yellow-bg: #fef3c7;
+  --pink: #f43f5e;
+  --pink-bg: #ffe4e6;
+  --green: #65a30d;
+  --green-bg: #ecfccb;
+  --blue: #f97316;
+  --blue-bg: #ffedd5;
+  --orange: #ea580c;
+  --orange-bg: #fff7ed;
+  --red: #dc2626;
+  --red-bg: #fee2e2;
+  --purple: #c026d3;
+  --purple-bg: #fae8ff;
+
+  --success: #65a30d;
+  --success-bg: #ecfccb;
+  --warning: #f59e0b;
+  --warning-bg: #fef3c7;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --info: #ea580c;
+  --info-bg: #fff7ed;
+
+  --shadow-sm: 3px 3px 0px #431407;
+  --shadow-md: 5px 5px 0px #431407;
+  --shadow-lg: 7px 7px 0px #ea580c;
+  --shadow-xl: 10px 10px 0px #ea580c;
+  --shadow-hover: 8px 8px 0px #431407;
+  --shadow-active: 2px 2px 0px #431407;
+}

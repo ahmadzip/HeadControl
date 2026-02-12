@@ -1,0 +1,48 @@
+/* ================================================================
+   Theme: Light (Default)
+   Clean, warm Neo Brutalism with sandy background
+   ================================================================ */
+[data-theme="light"] {
+  --accent: #4f46e5;
+  --accent-hover: #3730a3;
+  --accent-light: #c7d2fe;
+  --accent-bg: #eef2ff;
+
+  --bg-primary: #f5f0eb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fef3c7;
+  --surface: #ffffff;
+  --surface-hover: #fefce8;
+  --surface-elevated: #ffffff;
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #3d3d5c;
+  --text-tertiary: #6b7280;
+  --text-inverse: #ffffff;
+
+  --border: #1a1a2e;
+
+  --yellow: #fbbf24;
+  --yellow-bg: #fef3c7;
+  --pink: #ec4899;
+  --pink-bg: #fce7f3;
+  --green: #10b981;
+  --green-bg: #d1fae5;
+  --blue: #3b82f6;
+  --blue-bg: #dbeafe;
+  --orange: #f97316;
+  --orange-bg: #ffedd5;
+  --red: #ef4444;
+  --red-bg: #fee2e2;
+  --purple: #8b5cf6;
+  --purple-bg: #ede9fe;
+
+  --success: #059669;
+  --success-bg: #d1fae5;
+  --warning: #d97706;
+  --warning-bg: #fef3c7;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --info: #2563eb;
+  --info-bg: #dbeafe;
+}

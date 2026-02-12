@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Terminal
+   Old-school Hacker Green on Black
+   ================================================================ */
+[data-theme="terminal"] {
+  --accent: #33ff00; /* Neon Lime */
+  --accent-hover: #ccffcc;
+  --accent-light: #004d00;
+  --accent-bg: #0d0d0d;
+
+  --bg-primary: #000000;
+  --bg-secondary: #0d0d0d;
+  --bg-tertiary: #1a1a1a;
+  --surface: #0a0a0a;
+  --surface-hover: #141414;
+  --surface-elevated: #1e1e1e;
+
+  --text-primary: #33ff00;
+  --text-secondary: #00cc00;
+  --text-tertiary: #008000;
+  --text-inverse: #000000;
+
+  --border: #00ff00; /* Green edges */
+
+  --yellow: #ffff00;
+  --yellow-bg: #1a1a00;
+  --pink: #ff00ff;
+  --pink-bg: #1a001a;
+  --green: #00ff00;
+  --green-bg: #001a00;
+  --blue: #00ffff; /* Cyan */
+  --blue-bg: #001a1a;
+  --orange: #ff9900;
+  --orange-bg: #1a0f00;
+  --red: #ff0000;
+  --red-bg: #1a0000;
+  --purple: #cc33ff;
+  --purple-bg: #14051a;
+
+  --success: #00ff00;
+  --success-bg: #001a00;
+  --warning: #ffff00;
+  --warning-bg: #1a1a00;
+  --danger: #ff0000;
+  --danger-bg: #1a0000;
+  --info: #00ffff;
+  --info-bg: #001a1a;
+
+  --shadow-sm: 2px 2px 0px #003300;
+  --shadow-md: 4px 4px 0px #003300;
+  --shadow-lg: 6px 6px 0px #003300;
+  --shadow-xl: 10px 10px 0px #003300;
+  --shadow-hover: 8px 8px 0px #004d00;
+  --shadow-active: 2px 2px 0px #00ff00;
+}

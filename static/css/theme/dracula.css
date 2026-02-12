@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Dracula
+   Classic Dracula color scheme — purple dark
+   ================================================================ */
+[data-theme="dracula"] {
+  --accent: #bd93f9;
+  --accent-hover: #ff79c6;
+  --accent-light: #44475a;
+  --accent-bg: #282a36;
+
+  --bg-primary: #282a36;
+  --bg-secondary: #21222c;
+  --bg-tertiary: #44475a;
+  --surface: #21222c;
+  --surface-hover: #343746;
+  --surface-elevated: #44475a;
+
+  --text-primary: #f8f8f2;
+  --text-secondary: #c8c8c0;
+  --text-tertiary: #6272a4;
+  --text-inverse: #282a36;
+
+  --border: #6272a4;
+
+  --yellow: #f1fa8c;
+  --yellow-bg: #2a2c1a;
+  --pink: #ff79c6;
+  --pink-bg: #3d1a30;
+  --green: #50fa7b;
+  --green-bg: #1a3d22;
+  --blue: #8be9fd;
+  --blue-bg: #1a2f3d;
+  --orange: #ffb86c;
+  --orange-bg: #3d2a1a;
+  --red: #ff5555;
+  --red-bg: #3d1a1a;
+  --purple: #bd93f9;
+  --purple-bg: #2e1a3d;
+
+  --success: #50fa7b;
+  --success-bg: #1a3d22;
+  --warning: #f1fa8c;
+  --warning-bg: #2a2c1a;
+  --danger: #ff5555;
+  --danger-bg: #3d1a1a;
+  --info: #8be9fd;
+  --info-bg: #1a2f3d;
+
+  --shadow-sm: 3px 3px 0px #6272a4;
+  --shadow-md: 5px 5px 0px #6272a4;
+  --shadow-lg: 7px 7px 0px #bd93f9;
+  --shadow-xl: 10px 10px 0px #bd93f9;
+  --shadow-hover: 8px 8px 0px #ff79c6;
+  --shadow-active: 2px 2px 0px #6272a4;
+}

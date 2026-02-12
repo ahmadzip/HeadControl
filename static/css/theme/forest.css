@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Forest
+   Earthy greens and browns — natural and grounded
+   ================================================================ */
+[data-theme="forest"] {
+  --accent: #16a34a;
+  --accent-hover: #15803d;
+  --accent-light: #bbf7d0;
+  --accent-bg: #f0fdf4;
+
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #ecfccb;
+  --bg-tertiary: #dcfce7;
+  --surface: #fefce8;
+  --surface-hover: #f7fee7;
+  --surface-elevated: #fefce8;
+
+  --text-primary: #14532d;
+  --text-secondary: #166534;
+  --text-tertiary: #4d7c0f;
+  --text-inverse: #ffffff;
+
+  --border: #14532d;
+
+  --yellow: #ca8a04;
+  --yellow-bg: #fef9c3;
+  --pink: #db2777;
+  --pink-bg: #fce7f3;
+  --green: #16a34a;
+  --green-bg: #dcfce7;
+  --blue: #0d9488;
+  --blue-bg: #ccfbf1;
+  --orange: #ea580c;
+  --orange-bg: #ffedd5;
+  --red: #dc2626;
+  --red-bg: #fee2e2;
+  --purple: #7c3aed;
+  --purple-bg: #ede9fe;
+
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --warning: #ca8a04;
+  --warning-bg: #fef9c3;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --info: #0d9488;
+  --info-bg: #ccfbf1;
+
+  --shadow-sm: 3px 3px 0px #14532d;
+  --shadow-md: 5px 5px 0px #14532d;
+  --shadow-lg: 7px 7px 0px #14532d;
+  --shadow-xl: 10px 10px 0px #14532d;
+  --shadow-hover: 8px 8px 0px #14532d;
+  --shadow-active: 2px 2px 0px #14532d;
+}

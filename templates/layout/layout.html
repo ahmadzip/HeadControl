@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeadControl{{if .Title}} — {{.Title}}{{end}}</title>
+    <meta name="description" content="HeadControl — Lightweight admin console for Headscale">
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/theme/light.css">
+    <link rel="stylesheet" href="/static/css/theme/dark.css">
+    <link rel="stylesheet" href="/static/css/theme/synthwave.css">
+    <link rel="stylesheet" href="/static/css/theme/coffee.css">
+    <link rel="stylesheet" href="/static/css/theme/terminal.css">
+    <link rel="stylesheet" href="/static/css/theme/luxury.css">
+    <link rel="stylesheet" href="/static/css/theme/cyberpunk.css">
+    <link rel="stylesheet" href="/static/css/theme/pastel.css">
+    <link rel="stylesheet" href="/static/css/theme/ocean.css">
+    <link rel="stylesheet" href="/static/css/theme/sunset.css">
+    <link rel="stylesheet" href="/static/css/theme/forest.css">
+    <link rel="stylesheet" href="/static/css/theme/midnight.css">
+    <link rel="stylesheet" href="/static/css/theme/dracula.css">
+    <link rel="stylesheet" href="/static/css/theme/nord.css">
+    <link rel="stylesheet" href="/static/css/theme/rose.css">
+    <link rel="stylesheet" href="/static/css/theme/monokai.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-brand">HeadControl</span>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Menu</div>
+                    <a href="/" class="nav-link{{if eq .ActivePage " dashboard"}} active{{end}}" hx-get="/" hx-target=".content" hx-push-url="true">
+                        <i data-lucide="layout-grid"></i>
+                        Dashboard
+                    </a>
+                    <a href="/users" class="nav-link{{if eq .ActivePage " users"}} active{{end}}" hx-get="/users" hx-target=".content" hx-push-url="true">
+                        <i data-lucide="users"></i>
+                        Users
+                    </a>
+                    <a href="/nodes" class="nav-link{{if eq .ActivePage " nodes"}} active{{end}}" hx-get="/nodes" hx-target=".content" hx-push-url="true">
+                        <i data-lucide="cpu"></i>
+                        Nodes
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <a href="/settings" class="nav-link{{if eq .ActivePage " settings"}} active{{end}}" hx-get="/settings" hx-target=".content" hx-push-url="true">
+                        <i data-lucide="settings"></i>
+                        Settings
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay" onclick="HC.Sidebar.close()"></div>
+
+        <main class="main-area">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="mobile-menu-btn" onclick="HC.Sidebar.toggle()" aria-label="Toggle menu">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h1 class="topbar-title">{{.Title}}</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="theme-dropdown" id="theme-dropdown">
+                        <button class="theme-dropdown-btn" onclick="HC.Theme.toggleDropdown()" aria-label="Change theme">
+                            <i data-lucide="palette"></i>
+                            <span class="theme-dropdown-label" id="theme-label">Light</span>
+                            <i data-lucide="chevron-down" class="theme-dropdown-chevron"></i>
+                        </button>
+                        <div class="theme-dropdown-menu" id="theme-menu">
+                            <button class="theme-option" data-theme="light" onclick="HC.Theme.set('light')">
+                                <span class="theme-swatch" style="background:#f5f0eb; border-color:#1a1a2e;"></span>
+                                <span>Light</span>
+                            </button>
+                            <button class="theme-option" data-theme="dark" onclick="HC.Theme.set('dark')">
+                                <span class="theme-swatch" style="background:#1a1a2e; border-color:#f1f5f9;"></span>
+                                <span>Dark</span>
+                            </button>
+                            <button class="theme-option" data-theme="cyberpunk" onclick="HC.Theme.set('cyberpunk')">
+                                <span class="theme-swatch" style="background:#0a0a1a; border-color:#22d3ee;"></span>
+                                <span>Cyberpunk</span>
+                            </button>
+                            <button class="theme-option" data-theme="pastel" onclick="HC.Theme.set('pastel')">
+                                <span class="theme-swatch" style="background:#fdf2f8; border-color:#6d28d9;"></span>
+                                <span>Pastel</span>
+                            </button>
+                            <button class="theme-option" data-theme="ocean" onclick="HC.Theme.set('ocean')">
+                                <span class="theme-swatch" style="background:#ecfeff; border-color:#0c4a6e;"></span>
+                                <span>Ocean</span>
+                            </button>
+                            <button class="theme-option" data-theme="sunset" onclick="HC.Theme.set('sunset')">
+                                <span class="theme-swatch" style="background:#fffbeb; border-color:#431407;"></span>
+                                <span>Sunset</span>
+                            </button>
+                            <button class="theme-option" data-theme="forest" onclick="HC.Theme.set('forest')">
+                                <span class="theme-swatch" style="background:#f0fdf4; border-color:#14532d;"></span>
+                                <span>Forest</span>
+                            </button>
+                            <button class="theme-option" data-theme="midnight" onclick="HC.Theme.set('midnight')">
+                                <span class="theme-swatch" style="background:#000000; border-color:#525252;"></span>
+                                <span>Midnight</span>
+                            </button>
+                            <button class="theme-option" data-theme="dracula" onclick="HC.Theme.set('dracula')">
+                                <span class="theme-swatch" style="background:#282a36; border-color:#6272a4;"></span>
+                                <span>Dracula</span>
+                            </button>
+                            <button class="theme-option" data-theme="nord" onclick="HC.Theme.set('nord')">
+                                <span class="theme-swatch" style="background:#2e3440; border-color:#d8dee9;"></span>
+                                <span>Nord</span>
+                            </button>
+                            <button class="theme-option" data-theme="rose" onclick="HC.Theme.set('rose')">
+                                <span class="theme-swatch" style="background:#fff1f2; border-color:#4c0519;"></span>
+                                <span>Rose</span>
+                            </button>
+                            <button class="theme-option" data-theme="synthwave" onclick="HC.Theme.set('synthwave')">
+                                <span class="theme-swatch" style="background:#2b213a; border-color:#d52d9a;"></span>
+                                <span>Synthwave</span>
+                            </button>
+                            <button class="theme-option" data-theme="coffee" onclick="HC.Theme.set('coffee')">
+                                <span class="theme-swatch" style="background:#f5deb3; border-color:#8b4513;"></span>
+                                <span>Coffee</span>
+                            </button>
+                            <button class="theme-option" data-theme="terminal" onclick="HC.Theme.set('terminal')">
+                                <span class="theme-swatch" style="background:#000000; border-color:#00ff00;"></span>
+                                <span>Terminal</span>
+                            </button>
+                            <button class="theme-option" data-theme="luxury" onclick="HC.Theme.set('luxury')">
+                                <span class="theme-swatch" style="background:#0a0a0a; border-color:#d4af37;"></span>
+                                <span>Luxury</span>
+                            </button>
+                            <button class="theme-option" data-theme="monokai" onclick="HC.Theme.set('monokai')">
+                                <span class="theme-swatch" style="background:#272822; border-color:#a6e22e;"></span>
+                                <span>Monokai</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                {{if eq .ActivePage "dashboard"}}
+                {{template "dashboard-content.html" .}}
+                {{else if eq .ActivePage "users"}}
+                {{template "users-content.html" .}}
+                {{else if eq .ActivePage "nodes"}}
+                {{template "nodes-content.html" .}}
+                {{else if eq .ActivePage "settings"}}
+                {{template "settings-content.html" .}}
+                {{end}}
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="/static/js/app.js"></script>
+    <script>
+        lucide.createIcons();
+        document.body.addEventListener('htmx:afterSettle', function () {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

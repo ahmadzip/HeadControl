@@ -1,0 +1,55 @@
+/* ================================================================
+   Theme: Luxury
+   Black and Gold, Elegant
+   ================================================================ */
+[data-theme="luxury"] {
+  --accent: #d4af37; /* Metallic Gold */
+  --accent-hover: #b4941f;
+  --accent-light: #f1e5ac;
+  --accent-bg: #1c1c1c;
+
+  --bg-primary: #0a0a0a; /* Deep Black */
+  --bg-secondary: #121212;
+  --bg-tertiary: #1f1f1f;
+  --surface: #121212;
+  --surface-hover: #1e1e1e;
+  --surface-elevated: #262626;
+
+  --text-primary: #f2f2f2;
+  --text-secondary: #d4af37; /* Gold headings */
+  --text-tertiary: #a1a1aa;
+  --text-inverse: #000000;
+
+  --border: #d4af37; /* Gold borders */
+
+  --yellow: #fcd34d;
+  --yellow-bg: #451a03;
+  --pink: #f472b6;
+  --pink-bg: #500724;
+  --green: #10b981;
+  --green-bg: #064e3b;
+  --blue: #3b82f6;
+  --blue-bg: #1e3a8a;
+  --orange: #f59e0b;
+  --orange-bg: #451a03;
+  --red: #ef4444;
+  --red-bg: #450a0a;
+  --purple: #8b5cf6;
+  --purple-bg: #2e1065;
+
+  --success: #10b981;
+  --success-bg: #064e3b;
+  --warning: #f59e0b;
+  --warning-bg: #451a03;
+  --danger: #ef4444;
+  --danger-bg: #450a0a;
+  --info: #3b82f6;
+  --info-bg: #1e3a8a;
+
+  --shadow-sm: 2px 2px 0px #b4941f;
+  --shadow-md: 4px 4px 0px #856404;
+  --shadow-lg: 6px 6px 0px #856404;
+  --shadow-xl: 10px 10px 0px #b4941f;
+  --shadow-hover: 8px 8px 0px #d4af37;
+  --shadow-active: 2px 2px 0px #f1e5ac;
+}

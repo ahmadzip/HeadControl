@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeadControl — Setup</title>
+  <meta name="description" content="HeadControl Setup — Configure your Headscale connection">
+  <link rel="stylesheet" href="/static/css/app.css">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="setup-wrapper">
+    <div class="setup-card">
+      <div class="setup-logo">
+        <h1>HeadControl</h1>
+        <p>Configure your Headscale server connection</p>
+      </div>
+
+      <form id="setup-form">
+        <div class="form-group">
+          <label class="form-label" for="base_url">Headscale Base URL</label>
+          <div class="form-input-icon-wrap">
+            <i data-lucide="globe" class="input-icon"></i>
+            <input type="url" class="form-input" id="base_url" name="base_url" placeholder="https://headscale.example.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="api_key">API Key</label>
+          <div class="form-input-icon-wrap">
+            <i data-lucide="key-round" class="input-icon"></i>
+            <input type="password" class="form-input" id="api_key" name="api_key" placeholder="Enter your Headscale API key" required>
+          </div>
+        </div>
+
+        <div class="btn-group" style="margin-top: 28px;">
+          <button type="button" class="btn btn-secondary" hx-post="/api/test-connection" hx-include="#setup-form" hx-target="#connection-result" hx-indicator="#test-spinner">
+            <span class="htmx-hide-on-request">
+              <i data-lucide="check-circle"></i>
+              Test Connection
+            </span>
+            <span class="htmx-indicator">
+              <span class="spinner"></span>
+              Testing...
+            </span>
+          </button>
+
+          <button type="button" class="btn btn-primary btn-lg" style="flex:1" hx-post="/api/save-settings" hx-include="#setup-form" hx-target="#connection-result" hx-indicator="#save-spinner" id="save-btn">
+            <span class="htmx-hide-on-request">
+              <i data-lucide="save"></i>
+              Save &amp; Continue
+            </span>
+            <span class="htmx-indicator" id="save-spinner">
+              <span class="spinner"></span>
+              Saving...
+            </span>
+          </button>
+        </div>
+
+        <div id="connection-result"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+  <script>
+    lucide.createIcons();
+    document.body.addEventListener('htmx:afterSettle', function () {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+
+</html>
